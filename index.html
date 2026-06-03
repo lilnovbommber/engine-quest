@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engine Quest Prototype v0.1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>ENGINE QUEST</h1>
+        <p>Prototype v0.1 — Apprentice Technician Alpha</p>
+      </div>
+      <button id="resetBtn" class="danger">Reset Save</button>
+    </header>
+
+    <section class="player-card">
+      <div>
+        <h2 id="playerTitle">Apprentice Technician</h2>
+        <p id="mentorLine">Mentor: Mike — “Take your time. Good techs verify before replacing parts.”</p>
+      </div>
+      <div class="stats">
+        <span>Level <b id="level">1</b></span>
+        <span>XP <b id="xp">0</b>/<b id="nextXp">100</b></span>
+        <span>Cash $<b id="cash">0</b></span>
+      </div>
+      <div class="xpbar"><div id="xpFill"></div></div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-screen="garage">Garage Hub</button>
+      <button class="tab" data-screen="missions">Mission Board</button>
+      <button class="tab" data-screen="journal">Technician Journal</button>
+      <button class="tab" data-screen="certs">Certifications</button>
+      <button class="tab" data-screen="achievements">Achievements</button>
+    </nav>
+
+    <main>
+      <section id="garage" class="screen active">
+        <div class="grid">
+          <div class="panel">
+            <h2>Today in the Shop</h2>
+            <p>You are starting as an apprentice technician. Complete jobs, earn XP, unlock tools, and move through your certification tree.</p>
+            <button id="startNextBtn" class="primary">Start Next Available Mission</button>
+          </div>
+          <div class="panel">
+            <h2>Current Progress</h2>
+            <ul id="progressList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="missions" class="screen">
+        <h2>Mission Board</h2>
+        <div id="missionList" class="mission-list"></div>
+      </section>
+
+      <section id="journal" class="screen">
+        <h2>Technician Journal</h2>
+        <div id="journalList" class="journal-list"></div>
+      </section>
+
+      <section id="certs" class="screen">
+        <h2>Certification Tree</h2>
+        <div id="certList" class="cert-list"></div>
+      </section>
+
+      <section id="achievements" class="screen">
+        <h2>Achievements</h2>
+        <div id="achievementList" class="achievement-list"></div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <button id="closeModal" class="close">×</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalStory"></p>
+        <h3>Choose your action:</h3>
+        <div id="choiceList"></div>
+        <div id="resultBox" class="result hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
